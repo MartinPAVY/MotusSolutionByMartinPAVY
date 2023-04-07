@@ -11,7 +11,15 @@
 
         public bool IsOk()
         {
-            throw new NotImplementedException();
+            foreach (Lettre lettre in Lettres) 
+            { 
+                if (lettre.Etat == EtatLettre.MauvaiseLettre || lettre?.Etat == EtatLettre.BonneLettreMalPlacee) 
+                { 
+                    return false;
+                }
+            } 
+            return true;
+            
         }
     }
 }

@@ -22,7 +22,19 @@
 
         public bool MotTrouve()
         {
-            throw new NotImplementedException();
+            if (Tentatives.Count == 0)
+            {
+                return false;
+            }
+            else if (Tentatives.Last().IsOk())
+            {
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
+            
         }
 
         public void ChoisiUnMotAUHasard()
@@ -34,7 +46,8 @@
 
         public void AddMot(string mot)
         {
-            throw new NotImplementedException();
+            var essaiMot = this.calculMotService.CalculMot(mot, this.MotADeviner);
+            this.Tentatives.Add(essaiMot);
         }
     }
 }
