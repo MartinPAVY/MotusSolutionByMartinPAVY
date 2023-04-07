@@ -13,6 +13,7 @@ namespace DBZ.KameHouse
         }
 
         private bool _jeSuisCharge;
+        
 
         public ActionDeCombat ChoixProchaineAction(ActionDeCombat dernierActionAdversaire)
         {
@@ -21,6 +22,7 @@ namespace DBZ.KameHouse
                 this._jeSuisCharge = true;
                 return ActionDeCombat.ChargeKameHameHa;
             }
+            
 
             this._jeSuisCharge = false;
             return ActionDeCombat.KameHameHa;
